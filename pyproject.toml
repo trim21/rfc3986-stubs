@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rfc3986-stubs"
+version = "2.0.0a0"
+description = "rfc3986 typing stubs"
+authors = [
+    { name = "trim21", email = "trim21me@gmail.com" },
+]
+readme = 'readme.md'
+license = { text = 'MIT' }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Typing :: Typed"
+]
+
+requires-python = "~=3.8"
+
+dependencies = [
+    'rfc3986>=2.0.0,<2.1.0',
+    'typing-extensions>=4.7.1',
+]
+
+[project.optional-dependencies]
+dev = [
+    'pre-commit==3.8.0; python_version >= "3.9"',
+    'mypy==1.11.2; python_version >= "3.9"',
+]
+
+[project.urls]
+Homepage = "https://github.com/trim21/rfc3986-stubs"
+
+[tool.mypy]
+python_version = "3.12"
+disallow_untyped_defs = true
+ignore_missing_imports = true
+warn_return_any = false
+warn_unused_configs = true
+show_error_codes = true
+
+[tool.black]
+target-version = ['py312']
+
+[tool.ruff]
+target-version = "py312"
