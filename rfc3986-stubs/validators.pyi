@@ -5,8 +5,8 @@ from typing import Self, ClassVar
 class Validator:
     COMPONENT_NAMES: ClassVar[frozenset[str]]
     allowed_schemes: set[str]
-    allowed_hosts: str[str]
-    allowed_ports: str[str]
+    allowed_hosts: set[str]
+    allowed_ports: set[str]
     allow_password: bool
     required_components: dict[str, bool]
     validated_components: dict[str, bool]
