@@ -1,6 +1,6 @@
-from typing import AnyStr, Generic
+from typing import AnyStr, Generic, Self
+
 from rfc3986 import uri
-from typing import Self
 
 __all__ = ["ParseResult", "ParseResultBytes"]
 
@@ -10,6 +10,7 @@ class ParseResultMixin(Generic[AnyStr]):
     port: int | None
     query: AnyStr | None
     encoding: str
+
     @property
     def authority(self) -> AnyStr | None: ...
     def geturl(self) -> AnyStr: ...
@@ -30,6 +31,7 @@ class ParseResult(ParseResultMixin[str]):
     fragment: str | None
     encoding: str
     reference: uri.URIReference
+
     def __new__(
         cls,
         scheme: str | None,
@@ -59,8 +61,8 @@ class ParseResult(ParseResultMixin[str]):
         cls,
         uri_string: str | bytes,
         encoding: str = ...,
-        strict: bool = True,
-        lazy_normalize: bool = True,
+        strict: bool = ...,
+        lazy_normalize: bool = ...,
     ) -> Self: ...
     @property
     def authority(self) -> str | None: ...
@@ -88,6 +90,7 @@ class ParseResultBytes(ParseResultMixin[bytes]):
     encoding: str
     reference: uri.URIReference
     lazy_normalize: bool
+
     def __new__(
         cls,
         scheme: bytes | None,
@@ -99,7 +102,7 @@ class ParseResultBytes(ParseResultMixin[bytes]):
         fragment: bytes | None,
         uri_ref: uri.URIReference,
         encoding: str = ...,
-        lazy_normalize: bool = True,
+        lazy_normalize: bool = ...,
     ) -> Self: ...
     @classmethod
     def from_parts(
@@ -112,15 +115,15 @@ class ParseResultBytes(ParseResultMixin[bytes]):
         query: str | None = None,
         fragment: str | None = None,
         encoding: str = ...,
-        lazy_normalize: bool = True,
+        lazy_normalize: bool = ...,
     ) -> Self: ...
     @classmethod
     def from_string(
         cls,
         uri_string: str | bytes,
         encoding: str = ...,
-        strict: bool = True,
-        lazy_normalize: bool = True,
+        strict: bool = ...,
+        lazy_normalize: bool = ...,
     ) -> Self: ...
     @property
     def authority(self) -> bytes: ...
@@ -133,6 +136,6 @@ class ParseResultBytes(ParseResultMixin[bytes]):
         path: str | bytes | None = ...,
         query: str | bytes | None = ...,
         fragment: str | bytes | None = ...,
-        lazy_normalize: bool = True,
+        lazy_normalize: bool = ...,
     ) -> ParseResultBytes: ...
     def unsplit(self, use_idna: bool = ...) -> bytes: ...
