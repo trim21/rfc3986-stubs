@@ -1,7 +1,6 @@
 from typing import Self
 
 from ._mixin import URIMixin as URIMixin
-
 from .misc import URIReferenceBase
 
 class URIReference(URIReferenceBase, URIMixin):

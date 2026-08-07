@@ -1,9 +1,8 @@
 import typing as t
-
-from rfc3986._mixin import URIMixin
-from rfc3986 import URIReference
 from typing import Self
 
+from rfc3986 import URIReference
+from rfc3986._mixin import URIMixin
 from rfc3986.misc import URIReferenceBase
 
 class IRIReference(URIReferenceBase, URIMixin):

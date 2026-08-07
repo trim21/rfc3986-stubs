@@ -1,5 +1,3 @@
-from .uri import URIReference
-from .iri import IRIReference
 from .api import (
     iri_reference,
     is_valid_uri,
@@ -7,23 +5,25 @@ from .api import (
     uri_reference,
     urlparse,
 )
+from .iri import IRIReference
 from .parseresult import ParseResult as ParseResult
+from .uri import URIReference
 
 __all__ = [
+    "IRIReference",
     "ParseResult",
     "URIReference",
-    "IRIReference",
+    "__author__",
+    "__author_email__",
+    "__copyright__",
+    "__license__",
+    "__title__",
+    "__version__",
+    "iri_reference",
     "is_valid_uri",
     "normalize_uri",
     "uri_reference",
-    "iri_reference",
     "urlparse",
-    "__title__",
-    "__author__",
-    "__author_email__",
-    "__license__",
-    "__copyright__",
-    "__version__",
 ]
 
 __title__: str

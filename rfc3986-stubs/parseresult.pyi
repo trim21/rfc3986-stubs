@@ -1,10 +1,10 @@
-from typing import AnyStr, Generic, Self
+from typing import AnyStr, Self
 
 from rfc3986 import uri
 
 __all__ = ["ParseResult", "ParseResultBytes"]
 
-class ParseResultMixin(Generic[AnyStr]):
+class ParseResultMixin[AnyStr: (bytes, str)]:
     userinfo: AnyStr | None
     host: AnyStr | None
     port: int | None

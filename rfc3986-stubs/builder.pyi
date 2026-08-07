@@ -1,12 +1,11 @@
-from . import uri
-from typing import Mapping, List, Sequence, Any, Union, Tuple, Self
+from collections.abc import Mapping, Sequence
+from typing import Any, Self
 
-_QueryType = Union[
-    Mapping[Any, Any],
-    Mapping[Any, Sequence[Any]],
-    List[Tuple[Any, Any]],
-    List[Tuple[Any, Sequence[Any]]],
-]
+from . import uri
+
+type _QueryType = Mapping[Any, Any] | Mapping[Any, Sequence[Any]] | list[
+    tuple[Any, Any]
+] | list[tuple[Any, Sequence[Any]]]
 
 class URIBuilder:
     scheme: str | None

@@ -1,5 +1,7 @@
 import typing as t
-from . import compat as compat, misc as misc
+
+from . import compat as compat
+from . import misc as misc
 
 def normalize_scheme(scheme: str) -> str: ...
 def normalize_authority(
