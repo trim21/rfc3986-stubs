@@ -1,4 +1,4 @@
-from typing import TypedDict, Self
+from typing import Self, TypedDict
 
 from typing_extensions import deprecated
 

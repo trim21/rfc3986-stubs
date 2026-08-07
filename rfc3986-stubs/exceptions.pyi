@@ -1,4 +1,5 @@
-from typing import Collection, Any
+from collections.abc import Collection
+from typing import Any
 
 from rfc3986 import URIReference
 

@@ -1,6 +1,8 @@
-from typing import Pattern, Iterable, Collection
+from collections.abc import Collection, Iterable
+from re import Pattern
+from typing import ClassVar, Self
+
 from . import URIReference
-from typing import Self, ClassVar
 
 class Validator:
     COMPONENT_NAMES: ClassVar[frozenset[str]]
