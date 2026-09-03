@@ -2,7 +2,7 @@ default_stages: [commit]
 
 repos:
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: v0.25
+    rev: 0.26
     hooks:
       - id: validate-pyproject
         # Optional extra validations from SchemaStore:
@@ -30,7 +30,7 @@ repos:
         args: [--remove]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.16.2
+    rev: v0.16.6
     hooks:
       - id: ruff
         args: [ --fix ]
